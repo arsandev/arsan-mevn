@@ -2,8 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import './registerServiceWorker'
-import './globvar'
-window.axios = require('axios')
 
 Vue.config.productionTip = false
 

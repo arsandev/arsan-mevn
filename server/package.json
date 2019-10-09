@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "mongoose server",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon --exec babel-node index",
+    "make": "plop"
+  },
+  "author": "ArsanDev",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.21.1",
+    "mongoose": "^5.7.3",
+    "nodemon": "^1.19.3",
+    "plop": "^2.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
