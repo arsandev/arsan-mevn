@@ -4,6 +4,7 @@ import bodyParser from 'body-parser'
 import helmet from 'helmet'
 import fs from 'fs'
 import path from 'path'
+import 'dotenv/config'
 
 const app = express()
 app.use(bodyParser.json())

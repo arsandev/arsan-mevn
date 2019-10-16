@@ -1,5 +1,4 @@
 module.exports = function (plop) {
-    // controller generator
     plop.setGenerator('api', {
         description: 'create model and router',
         prompts: [{
@@ -11,17 +10,17 @@ module.exports = function (plop) {
           {
             type: 'add',
             path: 'routers/{{name}}Router.js',
-            templateFile: 'plop-templates/Router.hbs'
+            templateFile: 'templates/RouterAPI.hbs'
         },
         {
             type: 'add',
             path: 'models/{{name}}.js',
-            templateFile: 'plop-templates/Model.hbs'
+            templateFile: 'templates/Model.hbs'
         }]
-    });
+    })
 
     plop.setGenerator('api:resource', {
-        description: 'create model and router',
+        description: 'create model and router with CRUD structure',
         prompts: [{
             type: 'input',
             name: 'name',
@@ -31,12 +30,42 @@ module.exports = function (plop) {
           {
             type: 'add',
             path: 'routers/{{name}}Router.js',
-            templateFile: 'plop-templates/RouterResource.hbs'
+            templateFile: 'templates/RouterAPIResource.hbs'
         },
         {
             type: 'add',
             path: 'models/{{name}}.js',
-            templateFile: 'plop-templates/Model.hbs'
+            templateFile: 'templates/Model.hbs'
         }]
-    });
-};
+    })
+
+    plop.setGenerator('router', {
+        description: 'create router',
+        prompts: [{
+            type: 'input',
+            name: 'name',
+            message: 'your router\'s name'
+        }],
+        actions: [
+          {
+            type: 'add',
+            path: 'routers/{{name}}Router.js',
+            templateFile: 'templates/Router.hbs'
+        }]
+    })
+
+    plop.setGenerator('model', {
+        description: 'create model',
+        prompts: [{
+            type: 'input',
+            name: 'name',
+            message: 'your model\'s name'
+        }],
+        actions: [
+          {
+            type: 'add',
+            path: 'models/{{name}}.js',
+            templateFile: 'templates/Model.hbs'
+        }]
+    })
+}

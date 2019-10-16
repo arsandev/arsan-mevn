@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import m from '../models/test'
+import m from '../models/example'
 
 router.get('/', (req,res)=>{ // Get All
   m.find({}, (err,data)=>{
