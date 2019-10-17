@@ -26,9 +26,10 @@ npm run server
 ## /server
 ---
 **DB Config**
-./db.js
+
+./.env
 ```
-// const urlConfig = 'mongodb://localhost:27017/' Your Database Configuration URL
+// DB_URL = SET YOUR MONGODB URL HERE
 ```
 ---
 
