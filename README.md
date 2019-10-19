@@ -60,6 +60,10 @@ It will creating file on *./router* and *./model* with **CRUD** structure
 
 ## CLIENT
 ---
+**Run your client**
+```
+npm run client
+```
 **Run your tests**
 ```
 npm run test
