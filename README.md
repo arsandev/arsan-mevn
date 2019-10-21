@@ -26,9 +26,10 @@ npm run server
 ## /server
 ---
 **DB Config**
-./db.js
+
+./.env
 ```
-// const urlConfig = 'mongodb://localhost:27017/' Your Database Configuration URL
+// DB_URL = SET YOUR MONGODB URL HERE
 ```
 ---
 
@@ -59,6 +60,10 @@ It will creating file on *./router* and *./model* with **CRUD** structure
 
 ## CLIENT
 ---
+**Run your client**
+```
+npm run client
+```
 **Run your tests**
 ```
 npm run test
