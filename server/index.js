@@ -15,10 +15,15 @@ app.use(helmet())
 
 fs.readdirSync(path.join(__dirname, 'routers')).forEach(file => {
   let router = file.split('Router.js')
-  app.use('/'+router[0], require('./routers/'+file))
+  app.use('/api/'+router[0], require('./routers/'+file))
 })
 
-const port = 3000
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(__dirname+'/vue'))
+  app.get('/', (req,res)=>{ res.sendFile(__dirname+'/vue/index.html') })
+}
+
+const port = process.env.PORT || 3000
 app.listen(port,()=>{
   console.log('listened on '+port)
 })

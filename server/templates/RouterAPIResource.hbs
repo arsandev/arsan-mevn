@@ -16,7 +16,7 @@ router.get('/:id', (req,res)=>{ // Find One By Id
   })
 })
 
-router.post('/', (req,res)=>{ // Get All
+router.post('/', (req,res)=>{ // Post Into Model
   m.create({
     // Body Post
   }, (err,succ)=>{
@@ -25,7 +25,7 @@ router.post('/', (req,res)=>{ // Get All
   })
 })
 
-router.post('/update/:id', (req,res)=>{ // Get All
+router.post('/update/:id', (req,res)=>{ // Update One By Id
   m.findOneAndUpdate({_id:req.params.id}, {$set:{
     // Update Body Post
   }}, (err,succ)=>{
