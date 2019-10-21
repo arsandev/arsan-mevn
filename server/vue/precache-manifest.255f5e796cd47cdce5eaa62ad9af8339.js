@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/js/chunk-vendors.cfe398f9.js"
   },
   {
-    "revision": "ed4710ad790f1088a073",
-    "url": "/js/chunk-2519874a.57dbb58b.js"
+    "revision": "19d9f8a66d588efb9259",
+    "url": "/js/chunk-2d22d746.b9612ac3.js"
   },
   {
-    "revision": "9e9abb60236222d95c6f",
-    "url": "/js/app.fb96f2ad.js"
+    "revision": "f9738ad4a8919316b5a5",
+    "url": "/js/app.92291f35.js"
   },
   {
-    "revision": "f4af0c67ee3665c66e003711dd841497",
+    "revision": "107f94d23b152013f699eedfd6aab39b",
     "url": "/index.html"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/img/logo-fw.6d1de0e1.png"
   },
   {
-    "revision": "9e9abb60236222d95c6f",
+    "revision": "f9738ad4a8919316b5a5",
     "url": "/css/app.4d6616fb.css"
   }
 ];

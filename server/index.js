@@ -8,9 +8,7 @@ import 'dotenv/config'
 
 const app = express()
 app.use(bodyParser.json())
-app.use(cors({
-  origin:'http://localhost:8080'
-}))
+app.use(cors())
 app.use(helmet())
 
 fs.readdirSync(path.join(__dirname, 'routers')).forEach(file => {
@@ -20,7 +18,7 @@ fs.readdirSync(path.join(__dirname, 'routers')).forEach(file => {
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(__dirname+'/vue'))
-  app.get('/', (req,res)=>{ res.sendFile(__dirname+'/vue/index.html') })
+  app.get(/.*/, (req,res)=>{ res.sendFile(__dirname+'/vue/index.html') })
 }
 
 const port = process.env.PORT || 3000

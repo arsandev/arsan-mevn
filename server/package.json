@@ -4,6 +4,7 @@
   "description": "mongoose server",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node index",
     "server": "nodemon --exec babel-node index",
     "make": "plop"
   },

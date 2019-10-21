@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import m from '../models/test'
+import m from '../models/example'
 
 router.get('/', (req,res)=>{ // Get All
   m.find({}, (err,data)=>{
@@ -16,11 +16,20 @@ router.get('/:id', (req,res)=>{ // Find One By Id
   })
 })
 
-router.post('/', (req,res)=>{ // Get All
+router.post('/', (req,res)=>{ // Post Into Model
   m.create({
-    name:req.body.name
+    // Body Post
   }, (err,succ)=>{
-    if (err) res.json({status:false,msg:err})
+    if (err) res.json({status:false,msg:'error'})
+    else res.json({status:true,msg:'success'})
+  })
+})
+
+router.post('/update/:id', (req,res)=>{ // Update One By Id
+  m.findOneAndUpdate({_id:req.params.id}, {$set:{
+    // Update Body Post
+  }}, (err,succ)=>{
+    if (err) res.json({status:false,msg:'error'})
     else res.json({status:true,msg:'success'})
   })
 })
