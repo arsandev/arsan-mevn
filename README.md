@@ -33,29 +33,10 @@ npm run server
 ```
 ---
 
-**API ORIGIN**
-
-./index.js
+**Make Something On Server**
 ```
-app.use(cors({
-  origin: // Your Allowed Origin For HTTP Request
-}))
+npm run make
 ```
-
----
-**Make API Method And Route**
-```
-npm run make api YOUR_API_NAME
-```
-
-It will creating file on *./router* and *./model*
-
-***API RESOURCE***
-```
-npm run make api:resource YOUR_API_NAME
-```
-It will creating file on *./router* and *./model* with **CRUD** structure
-
 ---
 
 ## CLIENT
