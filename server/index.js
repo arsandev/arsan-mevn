@@ -5,7 +5,6 @@ import bodyParser from 'body-parser'
 import helmet from 'helmet'
 import fs from 'fs'
 import path from 'path'
-import tokenRoute from './routers/_JWT'
 import 'dotenv/config'
 
 const app = express()
@@ -14,7 +13,6 @@ app.use(cookieParser())
 app.use(cors())
 app.use(helmet())
 
-app.all('*', tokenRoute)
 fs.readdirSync(path.join(__dirname, 'routers')).forEach(file => {
   let router = file.split('Router.js')
   app.use('/api/'+router[0], require('./routers/'+file))
