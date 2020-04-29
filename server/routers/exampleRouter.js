@@ -1,22 +1,23 @@
-import express from 'express'
+import express from "express"
 const router = express.Router()
-import m from '../models/example'
+import m from "../models/example"
+import jwt from "../library/JWT"
 
-router.get('/', (req,res)=>{ // Get All
+router.get("/", (req,res)=>{ // Get All
   m.find({}, (err,data)=>{
     if (err) res.json({status:false,msg:err})
     else res.json({status:true,data:data})
   })
 })
 
-router.get('/:id', (req,res)=>{ // Find One By Id
+router.get("/:id", (req,res)=>{ // Find One By Id
   m.findOne({_id:req.params.id}, (err,data)=>{
     if (err) res.json({status:false,msg:err})
     else res.json({status:true,data:data})
   })
 })
 
-router.post('/', (req,res)=>{ // Post Into Model
+router.post('/", (req,res)=>{ // Post Into Model
   m.create({
     // Body Post
   }, (err,succ)=>{
@@ -25,7 +26,7 @@ router.post('/', (req,res)=>{ // Post Into Model
   })
 })
 
-router.post('/update/:id', (req,res)=>{ // Update One By Id
+router.put("/update/:id", (req,res)=>{ // Update One By Id
   m.findOneAndUpdate({_id:req.params.id}, {$set:{
     // Update Body Post
   }}, (err,succ)=>{
@@ -34,8 +35,8 @@ router.post('/update/:id', (req,res)=>{ // Update One By Id
   })
 })
 
-router.post('/delete', (req,res)=>{ // Delete One By Id
-  m.remove({_id:req.body.id}, (err,succ)=>{
+router.delete("/delete/:id", (req,res)=>{ // Delete One By Id
+  m.remove({_id:req.params.id}, (err,succ)=>{
     if (err) res.json({status:false,msg:err})
     else res.json({status:true,msg:'success'})
   })

@@ -68,19 +68,4 @@ module.exports = function (plop) {
             templateFile: 'templates/Model.hbs'
         }]
     })
-
-    plop.setGenerator('library', {
-        description: 'create library',
-        prompts: [{
-            type: 'input',
-            name: 'name',
-            message: 'your library name'
-        }],
-        actions: [
-          {
-            type: 'add',
-            path: 'library/{{name}}.js',
-            templateFile: 'templates/library.hbs'
-        }]
-    })
 }

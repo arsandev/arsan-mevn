@@ -1,7 +1,7 @@
-import db from '../db'
+import db from "../db"
 
-const model = db.model('example', db.Schema({
+const model = db.model("example", db.Schema({
   // Model Schema
 }))
 
-module.exports = model
+export default model
